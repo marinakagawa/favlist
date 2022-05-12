@@ -8,6 +8,7 @@
     "sass": "^1.51.0"
   },
   "scripts": {
-    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss"
+    "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss",
+    "start": "node server.js"
   }
 }
