@@ -8,6 +8,6 @@
     "sass": "^1.51.0"
   },
   "scripts": {
-    "build:css": "sass ../application.bootstrap.scss ..//application.css"
+    "build:css": "sass ./assets/stylesheets/application.bootstrap.scss"
   }
 }
