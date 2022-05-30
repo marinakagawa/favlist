@@ -23,6 +23,10 @@ gem "cssbundling-rails"
 
 gem "devise"
 
+gem "rails-i18n"
+
+gem "devise-i18n"
+
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "rspec-rails"
