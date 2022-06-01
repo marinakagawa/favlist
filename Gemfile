@@ -19,7 +19,9 @@ gem "jbuilder"
 
 gem "bootsnap", require: false
 
-gem "cssbundling-rails"
+gem "sassc-rails"
+
+gem 'bootstrap', '~> 5.1.3'
 
 gem "devise"
 
