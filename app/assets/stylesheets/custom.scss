@@ -14,6 +14,8 @@ h1 {
   color: #333;
 }
 
+/* ページ共通 */
+
 header {
   border-bottom: 2px solid lightcoral;
 }
@@ -26,4 +28,12 @@ footer {
   padding: 20px;
   color: white;
   background: lightcoral;
+}
+
+p {
+  padding: 10px;
+}
+
+#top-section {
+  margin-top: 60px;
 }
