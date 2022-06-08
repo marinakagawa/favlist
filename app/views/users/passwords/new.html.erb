@@ -2,7 +2,7 @@
   <div class="form-area col-md-4">
     <h2 class="form-title"><%= t('forgot_your_password') %></h2>
     <div class="form-fields">
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= form_for(resource, as: resource_name, url: user_password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
