@@ -2,7 +2,7 @@
   <div class="form-area col-md-4">
 <h2 class="form-title"><%= t('sign_in') %></h2>
     <div class="form-fields">
-<%= form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: new_user_session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email, for: "exampleInputEmail1", class: "form-label" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"exampleFormControlInput1" %>
