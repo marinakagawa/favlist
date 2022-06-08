@@ -67,13 +67,13 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "untitled_production"
 
-  ActionMailer::Base.perform_caching = false
+  config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  ActionMailer::Base.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = true
   host = 'https://fav-list.herokuapp.com'
-  ActionMailer::Base.default_url_options = { host: host }
+  config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
     :port => ENV['MAILGUN_SMTP_PORT'],
     :address => ENV['MAILGUN_SMTP_SERVER'],
