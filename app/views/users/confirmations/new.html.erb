@@ -2,7 +2,7 @@
   <div class="form-area col-md-4">
     <h2 class="form-title"><%= t('resend_confirmation_instructions') %></h2>
     <div class="form-fields">
-<%= form_for(resource, as: resource_name, url: new_user_confirmation_path(resource_name), html: { method: :post }) do |f| %>
+<%= form_for(resource, as: resource_name, url: user_confirmation_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
