@@ -2,7 +2,7 @@
   <div class="form-area col-md-4">
     <h2 class="form-title"><%= t('sign_up') %></h2>
 <div class="form-fields">
-<%= form_with model: @user, url: user_registration_path, local: true do |f| %>
+<%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
