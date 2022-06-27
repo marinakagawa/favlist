@@ -2,29 +2,29 @@
   <div class="form-area col-md-4">
     <h2 class="form-title"><%= t('sign_up') %></h2>
 <div class="form-fields">
-<%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+<%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |form| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email, for: "exampleInputEmail1", class: "form-label" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"exampleFormControlInput1" %>
+    <%= form.label :email, for: "exampleInputEmail1", class: "form-label" %><br />
+    <%= form.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"exampleFormControlInput1" %>
   </div>
 
   <div class="field">
-    <%= f.label :password, for: "exampleInputPassword1", class: "form-label" %>
+    <%= form.label :password, for: "exampleInputPassword1", class: "form-label" %>
     <% if @minimum_password_length %>
     <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", id: "exampleInputPassword1" %>
+    <%= form.password_field :password, autocomplete: "new-password", class: "form-control", id: "exampleInputPassword1" %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, for: "exampleInputPassword1", class: "form-label" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", id: "exampleInputPassword1" %>
+    <%= form.label :password_confirmation, for: "exampleInputPassword1", class: "form-label" %><br />
+    <%= form.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", id: "exampleInputPassword1" %>
   </div>
 
   <div class="actions submit-btn">
-    <%= f.submit t('sign_up'), class: "btn btn-primary" %>
+    <%= form.submit t('sign_up'), class: "btn btn-primary" %>
   </div>
 <% end %>
 
