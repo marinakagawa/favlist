@@ -4,15 +4,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
-  # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+    @user = User.new
+  end
 
-  # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "ユーザー認証メールを送信いたしました。認証が完了しましたらログインをお願いいたします。"
+      redirect_to new_user_session_path
+    else
+      flash[:alert] = "ユーザー登録に失敗しました。"
+      render action: :new and return
+    end
+  end
 
   # GET /resource/edit
   # def edit
