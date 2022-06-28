@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>Untitled</title>
+    <title>FavList</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -26,6 +26,21 @@
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">新着</a>
           </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "設定", edit_user_registration_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ログアウト", destroy_user_session_path, class: "nav-link", method: :delete %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "アカウント登録", new_user_registration_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
         </ul>
       </div>
     </div>
