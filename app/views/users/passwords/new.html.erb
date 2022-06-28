@@ -2,16 +2,16 @@
   <div class="form-area col-md-4">
     <h2 class="form-title"><%= t('forgot_your_password') %></h2>
     <div class="form-fields">
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= form_with model: @user, url: user_password_path do |form| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email, for: "exampleInputEmail1", class: "form-label" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"exampleFormControlInput1" %>
+    <%= form.label :email, for: "exampleInputEmail1", class: "form-label" %><br />
+    <%= form.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"exampleFormControlInput1" %>
   </div>
 
   <div class="actions submit-btn">
-    <%= f.submit t('send_me_reset_password_instructions'), class: "btn btn-primary" %>
+    <%= form.submit t('send_me_reset_password_instructions'), class: "btn btn-primary" %>
   </div>
 <% end %>
 
