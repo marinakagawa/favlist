@@ -1,7 +1,12 @@
-<h2><%= t('title', resource: resource.model_name.human) %></h2>
+<h2><%= t('Account settings', resource: resource.model_name.human) %></h2>
 
 <%= form_with model: @user, url: user_registration_path do |form| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= form.label :user_name %><br>
+    <%= form.text_field :user_name, autofocus: true %>
+  </div>
 
   <div class="field">
     <%= form.label :email %><br />
