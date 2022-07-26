@@ -17,7 +17,8 @@ RSpec.describe "Users", type: :system do
 
     click_link "アカウント設定"
     fill_in "user[user_name]", with: "テスト"
-    click_button "設定を保存する"
+    fill_in "user[current_password]", with: user.password
+    click_button "アカウントを更新する"
 
     click_link "FavList"
     expect(page).to have_content "テスト"

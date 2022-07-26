@@ -8,3 +8,5 @@ ja:
   resend_confirmation_instructions: "確認メールを再度送信"
   resend_unlock_instructions: "ロック解除用のメールを再度送信"
   send_me_reset_password_instructions: "パスワード変更用のメールを送信"
+  update: "アカウントを更新する"
+  Account settings: "アカウント設定"
