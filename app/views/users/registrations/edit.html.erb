@@ -6,8 +6,8 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= form.label :user_name %><br>
-    <%= form.text_field :user_name, autofocus: true %>
+    <%= form.label :user_name, class: "form-label" %><br>
+    <%= form.text_field :user_name, autofocus: true, class:"form-control" %>
   </div>
 
   <div class="field">
@@ -23,7 +23,6 @@
     <%= form.label :password, for: "exampleInputPassword1", class: "form-label" %> <i>(<%= t('leave_blank_if_you_don_t_want_to_change_it') %>)</i><br />
     <%= form.password_field :password, autocomplete: "new-password", class: "form-control", id: "exampleInputPassword1" %>
     <% if @minimum_password_length %>
-      <br />
       <em><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></em>
     <% end %>
   </div>
@@ -34,20 +33,28 @@
   </div>
 
   <div class="field">
-    <%= form.label :current_password, for: "exampleInputPassword1", class: "form-label" %> <i>(<%= t('.we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
+    <%= form.label :current_password, for: "exampleInputPassword1", class: "form-label" %> <i>(<%= t('we_need_your_current_password_to_confirm_your_changes') %>)</i><br />
     <%= form.password_field :current_password, autocomplete: "current-password", class: "form-control", id: "exampleInputPassword1" %>
   </div>
 
         <div class="actions submit-btn">
-          <%= form.submit t('update') %>
+          <%= form.submit t('update'), class: "btn btn-primary" %>
         </div>
 <% end %>
     </div>
   </div>
 </div>
 
-<h3><%= t('cancel_my_account') %></h3>
-
-<p><%= t('unhappy') %> <%= button_to t('cancel_my_account'), user_registration_path, data: { confirm: t('.are_you_sure') }, method: :delete %></p>
+<div class="row">
+  <div class="card col-md-4 account-setting">
+    <div class="card-body">
+      <h3 class="card-title"><%= t('cancel_my_account') %></h3>
+      <p class="card-text">
+        <%= t('unhappy') %>
+        <%= button_to t('cancel_my_account'), user_registration_path, class: "btn btn-danger", data: { confirm: t('.are_you_sure') }, method: :delete %>
+      </p>
+    </div>
+  </div>
+</div>
 
 <%= link_to t('devise.shared.links.back'), :back %>
