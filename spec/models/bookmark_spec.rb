@@ -6,11 +6,25 @@ RSpec.describe Bookmark, type: :model do
   it "is invalid without an user_id" do
     bookmark = FactoryBot.build(:bookmark, user_id: nil)
     bookmark.valid?
-    expect(bookmark).to_not be_valid
+    expect(bookmark.errors[:user_id]).to include("を入力してください")
   end
 
-  #user_idがあれば有効な状態であること
-  it "is valid with an user_id" do
-    expect(FactoryBot.build(:bookmark)).to be_valid
+  #空欄であれば無効な状態であること
+  it "is invalid without a link" do
+    bookmark = FactoryBot.build(:bookmark, link: " ")
+    bookmark.valid?
+    expect(bookmark.errors[:link]).to include("を入力してください")
+  end
+
+  #URLであれば有効な状態であること
+  it "is valid with url" do
+    expect(FactoryBot.create(:bookmark)).to be_valid
+  end
+
+  #URLでなければ無効な状態であること
+  it "is invalid without url" do
+    bookmark = FactoryBot.build(:bookmark, link: "こんにちは世界")
+    bookmark.valid?
+    expect(bookmark.errors[:link]).to include("は不正な値です")
   end
 end
